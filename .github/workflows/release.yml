@@ -1,0 +1,44 @@
+name: Release build
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: linux-x64
+            os: ubuntu-latest
+            artifact: universal
+          - name: windows-x64
+            os: windows-latest
+            artifact: universal.exe
+          - name: macos-arm64
+            os: macos-14
+            artifact: universal
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Test
+        run: cargo test --workspace --all-targets
+      - name: Release build
+        run: cargo build -p universal --release
+      - name: Stage artifact
+        shell: bash
+        run: |
+          mkdir -p dist
+          cp "target/release/${{ matrix.artifact }}" "dist/${{ matrix.artifact }}"
+          cp README.md LICENSE CHANGELOG.md dist/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: universal-${{ matrix.name }}
+          path: dist/

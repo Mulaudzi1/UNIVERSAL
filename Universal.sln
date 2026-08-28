@@ -1,0 +1,49 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Universal.Compiler", "visual-studio\Universal.Compiler\Universal.Compiler.vcxproj", "{9D32829D-FA02-4E7A-8D8B-A6A1084A9A01}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Universal.Cli", "visual-studio\Universal.Cli\Universal.Cli.vcxproj", "{7360E5DD-A8F3-4C91-B9D2-7877C04D0583}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9D32829D-FA02-4E7A-8D8B-A6A1084A9A01} = {9D32829D-FA02-4E7A-8D8B-A6A1084A9A01}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Universal.Tests", "visual-studio\Universal.Tests\Universal.Tests.vcxproj", "{0C75DD77-3B5F-4325-B189-50B7D6CF7130}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9D32829D-FA02-4E7A-8D8B-A6A1084A9A01} = {9D32829D-FA02-4E7A-8D8B-A6A1084A9A01}
+	EndProjectSection
+EndProject
+Project("{66A26720-8FB5-11D2-AA7E-00C04F688DDE}") = "Repository", "Repository", "{3FEEBC68-DDA8-4A82-A85F-BB0940FB9061}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		SECURITY.md = SECURITY.md
+		CHANGELOG.md = CHANGELOG.md
+		Cargo.toml = Cargo.toml
+		rust-toolchain.toml = rust-toolchain.toml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D32829D-FA02-4E7A-8D8B-A6A1084A9A01}.Debug|x64.ActiveCfg = Debug|x64
+		{9D32829D-FA02-4E7A-8D8B-A6A1084A9A01}.Debug|x64.Build.0 = Debug|x64
+		{9D32829D-FA02-4E7A-8D8B-A6A1084A9A01}.Release|x64.ActiveCfg = Release|x64
+		{9D32829D-FA02-4E7A-8D8B-A6A1084A9A01}.Release|x64.Build.0 = Release|x64
+		{7360E5DD-A8F3-4C91-B9D2-7877C04D0583}.Debug|x64.ActiveCfg = Debug|x64
+		{7360E5DD-A8F3-4C91-B9D2-7877C04D0583}.Debug|x64.Build.0 = Debug|x64
+		{7360E5DD-A8F3-4C91-B9D2-7877C04D0583}.Release|x64.ActiveCfg = Release|x64
+		{7360E5DD-A8F3-4C91-B9D2-7877C04D0583}.Release|x64.Build.0 = Release|x64
+		{0C75DD77-3B5F-4325-B189-50B7D6CF7130}.Debug|x64.ActiveCfg = Debug|x64
+		{0C75DD77-3B5F-4325-B189-50B7D6CF7130}.Debug|x64.Build.0 = Debug|x64
+		{0C75DD77-3B5F-4325-B189-50B7D6CF7130}.Release|x64.ActiveCfg = Release|x64
+		{0C75DD77-3B5F-4325-B189-50B7D6CF7130}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

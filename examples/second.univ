@@ -1,0 +1,22 @@
+ENTITY Employee
+    name: Text
+    active: Boolean
+    leaveBalance: Number
+    scorecard: Scorecard?
+END
+
+ENTITY Scorecard
+    rating: Number
+END
+
+employee = Employee(
+    name: "John",
+    active: true,
+    leaveBalance: 10
+)
+
+WHEN employee is active AND employee has a scorecard
+    approve review
+OTHERWISE
+    validate "Employee cannot be reviewed"
+END

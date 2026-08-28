@@ -1,0 +1,60 @@
+#[derive(Debug, Clone, PartialEq)]
+pub enum TokenKind {
+    Identifier(String),
+    String(String),
+    Number(String),
+    Newline,
+    Eof,
+    Equal,
+    Colon,
+    Comma,
+    Dot,
+    LParen,
+    RParen,
+    Question,
+    Arrow,
+    Plus,
+    Minus,
+    Star,
+    Slash,
+    EqEq,
+    NotEq,
+    Greater,
+    GreaterEq,
+    Less,
+    LessEq,
+    Entity,
+    Function,
+    Return,
+    When,
+    Else,
+    Otherwise,
+    End,
+    And,
+    Or,
+    Not,
+    Has,
+    Does,
+    Have,
+    Is,
+    Exists,
+    Print,
+    Validate,
+    True,
+    False,
+    Null,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct Span {
+    pub start: usize,
+    pub end: usize,
+    pub line: usize,
+    pub column: usize,
+}
+
+#[derive(Debug, Clone, PartialEq)]
+pub struct Token {
+    pub kind: TokenKind,
+    pub span: Span,
+}

@@ -1,0 +1,6 @@
+FUNCTION double(value: Number) -> Number
+    RETURN value * 2
+END
+
+answer = double(21)
+print answer

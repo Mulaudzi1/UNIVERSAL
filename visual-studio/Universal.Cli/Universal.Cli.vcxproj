@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7360E5DD-A8F3-4C91-B9D2-7877C04D0583}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <ProjectName>Universal.Cli</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration"><ConfigurationType>Makefile</ConfigurationType><PlatformToolset>v143</PlatformToolset></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration"><ConfigurationType>Makefile</ConfigurationType><PlatformToolset>v143</PlatformToolset></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <RepoRoot>$(MSBuildProjectDirectory)\..\..</RepoRoot>
+    <NMakeBuildCommandLine>cd /d &quot;$(RepoRoot)&quot; &amp;&amp; cargo build -p universal</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>cd /d &quot;$(RepoRoot)&quot; &amp;&amp; cargo clean -p universal &amp;&amp; cargo build -p universal</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>cd /d &quot;$(RepoRoot)&quot; &amp;&amp; cargo clean -p universal</NMakeCleanCommandLine>
+    <NMakeOutput>$(RepoRoot)\target\debug\universal.exe</NMakeOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <NMakeBuildCommandLine>cd /d &quot;$(RepoRoot)&quot; &amp;&amp; cargo build -p universal --release</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>cd /d &quot;$(RepoRoot)&quot; &amp;&amp; cargo clean -p universal &amp;&amp; cargo build -p universal --release</NMakeReBuildCommandLine>
+    <NMakeOutput>$(RepoRoot)\target\release\universal.exe</NMakeOutput>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\cli\Cargo.toml" />
+    <ClCompile Include="..\..\cli\src\main.rs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

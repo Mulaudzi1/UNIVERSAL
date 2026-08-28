@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0C75DD77-3B5F-4325-B189-50B7D6CF7130}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <ProjectName>Universal.Tests</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration"><ConfigurationType>Makefile</ConfigurationType><PlatformToolset>v143</PlatformToolset></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration"><ConfigurationType>Makefile</ConfigurationType><PlatformToolset>v143</PlatformToolset></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <RepoRoot>$(MSBuildProjectDirectory)\..\..</RepoRoot>
+    <NMakeBuildCommandLine>cd /d &quot;$(RepoRoot)&quot; &amp;&amp; cargo test --workspace --all-targets</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>cd /d &quot;$(RepoRoot)&quot; &amp;&amp; cargo test --workspace --all-targets</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>cd /d &quot;$(RepoRoot)&quot; &amp;&amp; cargo clean</NMakeCleanCommandLine>
+    <NMakeOutput>$(RepoRoot)\target\debug\deps</NMakeOutput>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\compiler\tests\language.rs" />
+    <None Include="..\..\examples\first.univ" />
+    <None Include="..\..\examples\second.univ" />
+    <None Include="..\..\examples\functions.univ" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

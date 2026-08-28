@@ -1,0 +1,25 @@
+name: Language proposal
+description: Start discussion for a syntax or semantic change before an RFC
+title: "[Language]: "
+labels: ["language-design"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What concrete developer problem should the language solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Include deterministic syntax and semantics, not natural-language guessing.
+    validations:
+      required: true
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: Alternatives and tradeoffs
+    validations:
+      required: true

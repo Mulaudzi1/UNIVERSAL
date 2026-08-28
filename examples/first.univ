@@ -1,0 +1,19 @@
+# The first meaningful UNIVERSAL program.
+ENTITY Employee
+    name: Text
+    scorecard: Scorecard?
+END
+
+ENTITY Scorecard
+    rating: Number
+END
+
+employee = Employee(
+    name: "John"
+)
+
+WHEN employee has a scorecard
+    print "Employee has a scorecard"
+OTHERWISE
+    validate "Employee must have a scorecard"
+END
