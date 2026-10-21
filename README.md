@@ -1,5 +1,10 @@
 # UNIVERSAL
 
+[![CI](https://github.com/Mulaudzi1/UNIVERSAL/actions/workflows/ci.yml/badge.svg)](https://github.com/Mulaudzi1/UNIVERSAL/actions/workflows/ci.yml)
+![Rust](https://img.shields.io/badge/Rust-stable-000000?logo=rust&logoColor=white)
+![Status](https://img.shields.io/badge/status-v0.1%20experimental-orange)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
 UNIVERSAL is an experimental, deterministic, intent-oriented general-purpose programming language. Its goal is to let developers express **what** software should do in a readable form without turning arbitrary English into executable code.
 
 This repository is the V0.1 compiler/interpreter foundation. It is intentionally small, but it is structured as a real language implementation rather than a disposable parser.
@@ -85,7 +90,7 @@ Lists, maps, money/date literals, modules, events, loops, structured validation 
 
 ## License
 
-Apache-2.0 is recommended: permissive for commercial and open-source adoption, includes an explicit patent grant, and is widely understood for infrastructure projects.
+Licensed under the [Apache License 2.0](LICENSE): permissive for commercial and open-source use, with an explicit patent grant.
 
 ## Visual Studio 2022
 
