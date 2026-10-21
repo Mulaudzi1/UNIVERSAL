@@ -28,21 +28,52 @@ pub struct BasicBlock {
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum Instruction {
-    Const { out: ValueId, value: Constant },
-    LoadName { out: ValueId, name: String },
-    StoreName { name: String, value: ValueId },
-    LoadProperty { out: ValueId, object: ValueId, property: String },
-    HasPropertyValue { out: ValueId, object: ValueId, property: String },
-    Call { out: Option<ValueId>, callee: String, args: Vec<ValueId> },
-    EmitValidation { message: ValueId },
-    EmitAction { words: Vec<String> },
-    Print { value: ValueId },
+    Const {
+        out: ValueId,
+        value: Constant,
+    },
+    LoadName {
+        out: ValueId,
+        name: String,
+    },
+    StoreName {
+        name: String,
+        value: ValueId,
+    },
+    LoadProperty {
+        out: ValueId,
+        object: ValueId,
+        property: String,
+    },
+    HasPropertyValue {
+        out: ValueId,
+        object: ValueId,
+        property: String,
+    },
+    Call {
+        out: Option<ValueId>,
+        callee: String,
+        args: Vec<ValueId>,
+    },
+    EmitValidation {
+        message: ValueId,
+    },
+    EmitAction {
+        words: Vec<String>,
+    },
+    Print {
+        value: ValueId,
+    },
 }
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum Terminator {
     Jump(BlockId),
-    Branch { condition: ValueId, when_true: BlockId, when_false: BlockId },
+    Branch {
+        condition: ValueId,
+        when_true: BlockId,
+        when_false: BlockId,
+    },
     Return(Option<ValueId>),
     Stop,
 }

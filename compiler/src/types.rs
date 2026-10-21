@@ -20,8 +20,15 @@ pub enum Type {
 
 pub fn builtin(name: &str) -> Option<Type> {
     Some(match name {
-        "Text" => Type::Text, "Number" => Type::Number, "Decimal" => Type::Decimal, "Boolean" => Type::Boolean,
-        "Date" => Type::Date, "Time" => Type::Time, "DateTime" => Type::DateTime, "Money" => Type::Money,
-        "Error" => Type::Error, _ => return None,
+        "Text" => Type::Text,
+        "Number" => Type::Number,
+        "Decimal" => Type::Decimal,
+        "Boolean" => Type::Boolean,
+        "Date" => Type::Date,
+        "Time" => Type::Time,
+        "DateTime" => Type::DateTime,
+        "Money" => Type::Money,
+        "Error" => Type::Error,
+        _ => return None,
     })
 }
